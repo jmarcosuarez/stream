@@ -1,3 +1,21 @@
 .stream {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 20px;
+  margin: 20px;
+  background-color: #c1c1c1;
+}
+
+.stream > div {
+  flex: 1;
+  padding: 20px;
+}
+
+img {
+  width: 80%;
+}
+
+.stream p {
+  background-color: #fff;
 }

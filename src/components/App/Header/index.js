@@ -6,7 +6,7 @@ import styles from '../App.css';
 
 const Header = () =>
   <header className={styles.header}>
-    <p>Logo</p>
+    <p>Stream - Github User Searcher</p>
     <Search />
     <Filters />
   </header>;
