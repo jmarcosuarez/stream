@@ -7,6 +7,8 @@ import configureStore from './stores/configureStore';
 import * as actions from './actions';
 import App from './components/App';
 import Stream from './components/Stream';
+import User from './components/Stream/components/Profile';
+import Followers from './components/Stream/components/Followers';
 
 const tracks = [
   {
@@ -28,6 +30,9 @@ ReactDOM.render(
       <Route path="/" component={App}>
         <IndexRoute component={Stream} />
         <Route path="/" component={Stream} />
+        <Route path="users/:username" component={User}>
+          <Route path="followers" component={Followers} />
+        </Route>
       </Route>
     </Router>
   </Provider>,

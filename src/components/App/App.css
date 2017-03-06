@@ -20,14 +20,26 @@ body {
 }
 
 header {
-  flex: 0 0 80px;
-  /*background-color: #ececec;*/
-  padding: 10px;
+  flex: 0 0 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ececec;
+  padding: 20px;
   text-align: center;
 }
 
-header > p {
-  color: #e6af2e;
+header p {
+  margin-right: auto;
+}
+
+.filters ul {
+  list-style: none;
+  display: inline;
+}
+
+.filters ul li {
+  display: inline;
 }
 
 main {
@@ -36,11 +48,12 @@ main {
 
 footer {
   flex: 0 0 40px; /* don’t grow or shrink - just stay at a height of 90px. */ 
-  padding: 10px;
+  padding: 20px;
   border-top: 1px solid #ececec;
   /*background-color: #282f44;*/
 }
 footer ul {
+  padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;

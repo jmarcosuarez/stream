@@ -1,5 +1,6 @@
 import React from 'react';
 import { browserHistory as history } from 'react-router';
+import styles from '../App.css';
 
 class Search extends React.Component {
   constructor(props) {
@@ -8,13 +9,12 @@ class Search extends React.Component {
   }
   _handleSubmit(e) {
     e.preventDefault();
-    history.push(`/user/${this.refs.userInput.value}`)
+    history.push(`/users/${this.refs.userInput.value}`)
   }
 
   render() {
     return (
-      <div className="search-page">
-        <h2>Enter a GitHub username</h2>
+      <div className={styles.search}>
         <form onSubmit={this._handleSubmit}>
           <input ref="userInput" className="search-page__input" type="text" />
           <button className="search-page__button">Search</button>
