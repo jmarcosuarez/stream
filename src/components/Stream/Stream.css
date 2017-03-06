@@ -12,10 +12,41 @@
   padding: 20px;
 }
 
-img {
+.stream img {
   width: 80%;
 }
 
 .stream p {
   background-color: #fff;
+}
+
+.userPage {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  margin: 20px;
+  background-color: #c1c1c1;
+}
+
+.userPage > div {
+  flex: 1;
+  padding: 20px;
+}
+
+.userPage img {
+  width: 80%;
+  border-radius: 4%;
+}
+
+.followers {
+  display: flex;
+}
+.followers img {
+  width: 20%;
+  border-radius: 4%;
+}
+
+.followers > div {
+  flex: 1;
 }

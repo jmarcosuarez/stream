@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import styles from '../Stream.css';
 
 class User extends React.Component {
     constructor() {
@@ -73,20 +74,23 @@ class User extends React.Component {
 
         // Look in index.css for the styles that make this look like it does
         return (
-            <div className="user-page">
-                <div className="user-info">
-                    <Link className="user-info__text" to={`/users/${user.login}`}>
-                        <img className="user-info__avatar" src={user.avatar_url} alt={`${user.login} avatar`}/>
-                        <h2 className="user-info__title">{user.login} ({user.name})</h2>
-                        <p className="user-info__bio">{user.bio}</p>
-                    </Link>
-
-                    <ul className="user-info__stats">
-                        {stats.map(this.renderStat)}
-                    </ul>
-                </div>
-                 {this.props.children}
+          <div>
+            <div className={styles.userPage}>
+              <div className="image">
+                <img className="userInfo_avatar" src={user.avatar_url} alt={`${user.login} avatar`}/>
+              </div>
+              <div className="text">
+                <h2 className="userInfo_title">{user.login} ({user.name})</h2>
+                <p className="userInfo_bio">{user.bio}</p>
+                <ul className="userInfo_stats">
+                  {stats.map(this.renderStat)}
+                </ul>
+              </div>
             </div>
+            <div className={styles.followersPage}>
+             {this.props.children}
+            </div>
+          </div>
         );
     }
 };
