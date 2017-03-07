@@ -4,7 +4,7 @@ This app searches users within github using Github API. Searching starts using t
 
   - A list of its repos
   - A list of its followers
-  - A list of the users that follow him or her
+  - A list of the users that follows that user
 
 Following any of those links displays its contents right below the current view of the user. 
 
