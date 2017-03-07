@@ -10,17 +10,7 @@ import Stream from './components/Stream';
 import User from './components/Stream/components/Profile';
 import Followers from './components/Stream/components/Followers';
 
-const tracks = [
-  {
-    title: 'Some track'
-  },
-  {
-    title: 'Some other track'
-  }
-];
-
 const store = configureStore();
-store.dispatch(actions.setTracks(tracks));
 
 const history = syncHistoryWithStore(browserHistory, store);
 
@@ -29,7 +19,6 @@ ReactDOM.render(
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Stream} />
-        <Route path="/" component={Stream} />
         <Route path="users/:username" component={User}>
           <Route path="followers" component={Followers} />
         </Route>
@@ -39,4 +28,3 @@ ReactDOM.render(
   document.getElementById('app')
 );
 
-// module.hot.accept();

@@ -1,5 +1,5 @@
-import { setTracks } from './track';
+import { fetchUser } from './user';
 
 export {
-  setTracks
+  fetchUser
 };

@@ -1,1 +1,1 @@
-export const TRACKS_SET = 'TRACKS_SET';
+export const USER_FETCH = 'USER_FETCH';

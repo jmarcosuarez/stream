@@ -1,12 +1,24 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import Stream from './presenter';
-
-function mapStateToProps(state) {
-  const tracks = state.track;
-  return {
-    tracks
-  }
+import styles from './Stream.css';
+  
+function Stream() {
+  return (
+    <div className={styles.stream}>
+      <div className="image">
+        <img src="blank-profile-picture.png" className="img-responsive" />
+      </div>
+      <div className="text">
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  );
 }
 
-export default connect(mapStateToProps)(Stream);
+export default Stream;
