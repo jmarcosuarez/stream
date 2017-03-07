@@ -2,9 +2,9 @@
 
 This app searches users within github using Github API. Searching starts using the search box at the header of the app. Once the form is send, the found user is displayed along with links to:
 
-A list of its repos
-A list of its followers
-A list of the users that follow him or her
+  - A list of its repos
+  - A list of its followers
+  - A list of the users that follow him or her
 
 Following any of those links displays its contents right below the current view of the user. 
 
