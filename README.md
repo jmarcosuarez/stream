@@ -41,8 +41,12 @@ Theres plenty to call as missing but ill focus here on whats done right now, eve
 
 A few components got state while it should be redux the one to handle it. Those are the components Followers, Followings and Repos. Basically Profile its already hooked into redux so it helps to see how this three components will end up when hooked into redux. That would mean making the component a container, eliminating state and the constructor, and passing it an action whose callback will reach the API, instead of fetching data from withing the component.
 
+One very important miss is linting, usually I lint all my projects extending airbnb rules. To see examples of my code and linting boilerplate see.
+  - The [Agenda App] (https://github.com/jmarcosuarez/agenda)
+  - Or more recently (for the latest webpack 2.2) see [minimal-react-boilerplate] (https://github.com/jmarcosuarez/minimal-react-boilerplate)
+  
 ## METHODOLOGY
-
+o
 This app makes heavy use of react router to injects views on different childrens positions. This all start in the header, the form uses React router browserHistory to programmatically change the url. The app starts at an emptly state and after the search the Profile component in loaded. All subsequent conponents are children of this one so they all will be layeded right below. 
 
 The use of a react lifecycle method componentDidUpdate() was meeded presicely because selecting users in the followers or following listings has to change the already loaded user. Meaning the loaded user has to give way to the new user if selected on any list. While componentDidMount() is used to fetch data from Github API once the component os loaded.
