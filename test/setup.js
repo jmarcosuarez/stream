@@ -16,3 +16,10 @@ Object.keys(window).forEach((key) => {
 
 global.React = React;
 global.expect = expect;
+
+// Prevent mocha from interpreting CSS @import files
+function noop() {
+  return null;
+}
+
+require.extensions['.css'] = noop;
