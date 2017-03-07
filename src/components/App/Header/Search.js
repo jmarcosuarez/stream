@@ -16,8 +16,8 @@ class Search extends React.Component {
     return (
       <div className={styles.search}>        
         <form onSubmit={this._handleSubmit}>
-          <input ref="userInput" className="search-page__input" type="text" />
-          <button className="search-page__button">Search</button>
+          <input ref="userInput" className="input" type="text" />
+          <button className="button">Search</button>
         </form>
       </div>
     );

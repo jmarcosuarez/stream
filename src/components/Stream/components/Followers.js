@@ -22,11 +22,9 @@ class Followers extends React.Component {
       this.fetchData();
     }
     componentDidUpdate(prevProps, prevState) {
-      // only update if the user has changed
-      // console.log(prevProps, prevState);
-      // if (prevProps.params.username !== this.props.username) {
+      if (prevProps.params.username !== this.props.params.username) {
         this.fetchData(); 
-      // }
+      }
     }
     render() {
         // If the state doesn't have a Followers key, it means the AJAX didn't complete yet. Simply render a LOADING indicator.
@@ -34,7 +32,6 @@ class Followers extends React.Component {
             return (<div className="Followers-page">LOADING...</div>);
         }
 
-        // Look in index.css for the styles that make this look like it does
         return (
           <div className="followers-page">
             <h2>Followers of {this.props.params.username}</h2>

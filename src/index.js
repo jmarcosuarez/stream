@@ -9,6 +9,8 @@ import App from './components/App';
 import Stream from './components/Stream';
 import User from './components/Stream/components/Profile';
 import Followers from './components/Stream/components/Followers';
+import Following from './components/Stream/components/Following';
+import Repos from './components/Stream/components/Repos';
 
 const store = configureStore();
 
@@ -21,6 +23,8 @@ ReactDOM.render(
         <IndexRoute component={Stream} />
         <Route path="users/:username" component={User}>
           <Route path="followers" component={Followers} />
+          <Route path="following" component={Following} />
+          <Route path="repos" component={Repos} />
         </Route>
       </Route>
     </Router>
