@@ -55,7 +55,7 @@ Fetching data on componentWillMount() is a lousy way of fetching data and doesn'
 
 This app makes heavy use of react router to injects views on different childrens positions. This all start in the header, the form uses React router browserHistory to programmatically change the url. The app starts at an emptly state and after the search the Profile component in loaded. All subsequent conponents are children of this one so they all will be layeded right below. 
 
-The use of a react lifecycle method componentDidUpdate() was needed precisely because selecting users in the followers or following listings had to change the already loaded user. Meaning the loaded user had to give way to the new user if a selection on any list was made. Another lifecycle methos used was componentDidMount(), used to fetch data from the Github API once the component finished its loaded phase.
+The use of a react lifecycle method componentDidUpdate() was needed precisely because selecting users in the followers or following listings had to change the already loaded user. Meaning the loaded user had to give way to the new user if a selection on any list was made. Another lifecycle method used was componentDidMount(), used to fetch data from the Github API once the component finished its loaded phase.
 
 ## TESTS
 The setup is done to test React components. However, test are only set for the main component and there's definitively missing plenty of components and tests to do. If you like to see test on immutable structures you may take a look at the agenda repository. 
