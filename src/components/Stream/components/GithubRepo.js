@@ -1,10 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router';
 import styles from '../Stream.css';
 
 const GithubRepo = ({ repo }) =>
   <div>
-    <a href={repo.html_url} target="_blank">
+    <a href={repo.html_url} rel="noopener noreferrer" target="_blank">
       <div className={styles.repos}>
         <div className="name">
           {repo.name}
@@ -15,5 +14,9 @@ const GithubRepo = ({ repo }) =>
       </div>
     </a>
   </div>;
+
+GithubRepo.propTypes = {
+  repo: React.PropTypes.string.isRequired,
+};
 
 export default GithubRepo;

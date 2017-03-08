@@ -20,4 +20,8 @@ function App({ children }) {
   );
 }
 
+App.propTypes = {
+  children: React.PropTypes.node.isRequired,
+};
+
 export default App;

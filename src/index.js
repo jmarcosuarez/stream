@@ -1,10 +1,10 @@
+/* eslint-disable no-undef */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
-import * as actions from './actions';
 import App from './components/App';
 import Stream from './components/Stream';
 import User from './components/Stream/components/Profile';
@@ -29,6 +29,6 @@ ReactDOM.render(
       </Route>
     </Router>
   </Provider>,
-  document.getElementById('app')
+  document.getElementById('app'),
 );
 

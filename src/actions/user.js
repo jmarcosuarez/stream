@@ -1,10 +1,10 @@
-import * as actionTypes from '../constants/actionTypes';
 import fetch from 'isomorphic-fetch';
+import * as actionTypes from '../constants/actionTypes';
 
 function setNewUser(user) {
   return {
     type: actionTypes.USER_FETCH,
-    user
+    user,
   };
 }
 
@@ -12,7 +12,7 @@ export function fetchUser(params) {
   console.log(params);
   return (dispatch) => {
     fetch(`//api.github.com/users/${params}`)
-      .then((response) => response.json())
+      .then(response => response.json())
       .then((user) => {
         dispatch(setNewUser(user));
       });

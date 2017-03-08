@@ -7,7 +7,7 @@ const GithubUser = ({ follower }) =>
     <Link to={follower.followers_url}>
       <div className={styles.followers}>
         <div className="image">
-          <img src={follower.avatar_url}/>
+          <img src={follower.avatar_url} alt="The follower avatar" />
         </div>
         <div className="text">
           {follower.login}
@@ -15,5 +15,9 @@ const GithubUser = ({ follower }) =>
       </div>
     </Link>
   </div>;
+
+GithubUser.propTypes = {
+  follower: React.PropTypes.node.isRequired,
+};
 
 export default GithubUser;

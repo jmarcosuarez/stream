@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable class-methods-use-this */
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -34,7 +36,7 @@ class User extends React.Component {
     const { user } = this.props;
     // If the state doesn't have a user key, it means the AJAX didn't complete yet. Simply render a LOADING indicator.
     if (!this.props.user) {
-        return (<div className="user-page">LOADING...</div>);
+      return (<div className="user-page">LOADING...</div>);
     }
 
     // Gather up some number stats about the user, to be used in a map below
@@ -42,18 +44,18 @@ class User extends React.Component {
       {
         name: 'Public Repos',
         value: user.public_repos,
-        url: `/users/${this.props.params.username}/repos`
+        url: `/users/${this.props.params.username}/repos`,
       },
       {
         name: 'Followers',
         value: user.followers,
-        url: `/users/${this.props.params.username}/followers`
+        url: `/users/${this.props.params.username}/followers`,
       },
       {
         name: 'Following',
         value: user.following,
-        url: `/users/${this.props.params.username}/following`
-      }
+        url: `/users/${this.props.params.username}/following`,
+      },
     ];
 
     // Look in index.css for the styles that make this look like it does
@@ -61,7 +63,7 @@ class User extends React.Component {
       <div>
         <div className={styles.userPage}>
           <div className="image">
-            <img className="userInfo_avatar" src={user.avatar_url} alt={`${user.login} avatar`}/>
+            <img className="userInfo_avatar" src={user.avatar_url} alt={`${user.login} avatar`} />
           </div>
           <div className="text">
             <h2 className="userInfo_title">{user.login} ({user.name})</h2>
@@ -72,28 +74,33 @@ class User extends React.Component {
           </div>
         </div>
         <div className={styles.followersPage}>
-         {this.props.children}
+          {this.props.children}
         </div>
       </div>
     );
   }
-};
+}
 
 function mapStateToProps(state) {
   const { user } = state.user;
   return {
     user,
-  }
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    onProfileFetch: bindActionCreators(actions.fetchUser, dispatch)
+    onProfileFetch: bindActionCreators(actions.fetchUser, dispatch),
   };
 }
 
 User.propTypes = {
-  onProfileFetch: React.PropTypes.func
+  children: React.PropTypes.node.isRequired,
+  onProfileFetch: React.PropTypes.func.isRequired,
+  params: React.PropTypes.shape({
+    username: React.PropTypes.shape,
+  }).isRequired,
+  user: React.PropTypes.string.isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(User);

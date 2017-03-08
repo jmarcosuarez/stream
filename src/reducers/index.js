@@ -4,5 +4,5 @@ import user from './profile';
 
 export default combineReducers({
   user,
-  routing: routerReducer
+  routing: routerReducer,
 });

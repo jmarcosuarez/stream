@@ -1,5 +1,7 @@
+/* eslint-disable global-require */
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+/* eslint-disable import/no-extraneous-dependencies */
 import createLogger from 'redux-logger';
 import { browserHistory } from 'react-router';
 import { routerMiddleware } from 'react-router-redux';

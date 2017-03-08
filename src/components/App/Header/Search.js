@@ -5,23 +5,23 @@ import styles from '../App.css';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this._handleSubmit = this._handleSubmit.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
-  _handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
-    history.push(`/users/${this.refs.userInput.value}`)
+    history.push(`/users/${this.textInput.value}`);
   }
 
   render() {
     return (
-      <div className={styles.search}>        
-        <form onSubmit={this._handleSubmit}>
-          <input ref="userInput" className="input" type="text" />
+      <div className={styles.search}>
+        <form onSubmit={this.handleSubmit}>
+          <input ref={(input) => { this.textInput = input; }} className="input" type="text" />
           <button className="button">Search</button>
         </form>
       </div>
     );
   }
-};
+}
 
 export default Search;
