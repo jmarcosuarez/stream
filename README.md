@@ -42,18 +42,20 @@ Theres plenty to call as missing but ill focus here on whats done right now, eve
 A few components got state while it should be redux the one to handle it. Those are the components Followers, Followings and Repos. Basically Profile its already hooked into redux so it helps to see how this three components will end up when hooked into redux. That would mean making the component a container, eliminating state and the constructor, and passing it an action whose callback will reach the API, instead of fetching data from withing the component.
 
 ** EDIT: On my latest commit linting has being set using Airbnb rules! **
+
 One very important miss is linting, usually I lint all my projects extending airbnb rules. To see examples of my code and linting boilerplate see.
   - The [Agenda App] (https://github.com/jmarcosuarez/agenda)
   - Or more recently (for the latest webpack 2.2) see [minimal-react-boilerplate] (https://github.com/jmarcosuarez/minimal-react-boilerplate)
+
 ** EDIT: On my latest commit linting has being set using Airbnb rules! **
 
 Fetching data on componentWillMount() is a lousy way of fetching data and doesn't give to reusable components. Another way of initialization of the component is through react-router OnEnter callback. This way we get rid of using lifecycle components on load-time. A better pattern would has been a container connected to redux that where parent to all components fetching data but since navigation is done programaticaly through react-router that way didn't seem possible. 
 
 ## METHODOLOGY
-o
+
 This app makes heavy use of react router to injects views on different childrens positions. This all start in the header, the form uses React router browserHistory to programmatically change the url. The app starts at an emptly state and after the search the Profile component in loaded. All subsequent conponents are children of this one so they all will be layeded right below. 
 
-The use of a react lifecycle method componentDidUpdate() was meeded presicely because selecting users in the followers or following listings has to change the already loaded user. Meaning the loaded user has to give way to the new user if selected on any list. While componentDidMount() is used to fetch data from Github API once the component os loaded.
+The use of a react lifecycle method componentDidUpdate() was needed precisely because selecting users in the followers or following listings had to change the already loaded user. Meaning the loaded user had to give way to the new user if a selection on any list was made. Another lifecycle methos used was componentDidMount(), used to fetch data from the Github API once the component finished its loaded phase.
 
 ## TESTS
 The setup is done to test React components. However, test are only set for the main component and there's definitively missing plenty of components and tests to do. If you like to see test on immutable structures you may take a look at the agenda repository. 
