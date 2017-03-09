@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 import configureStore from './stores/configureStore';
 import App from './components/App';
 import Stream from './components/Stream';
-import User from './components/Stream/components/Profile';
+import Profile from './components/Stream/components/Profile';
 import Followers from './components/Stream/components/Followers';
 import Following from './components/Stream/components/Following';
 import Repos from './components/Stream/components/Repos';
@@ -21,7 +21,7 @@ ReactDOM.render(
     <Router onUpdate={() => window.scrollTo(0, 0)} history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Stream} />
-        <Route path="users/:username" component={User}>
+        <Route path="users/:username" component={Profile}>
           <Route path="followers" component={Followers} />
           <Route path="following" component={Following} />
           <Route path="repos" component={Repos} />
