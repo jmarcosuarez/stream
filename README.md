@@ -53,7 +53,7 @@ Fetching data on componentWillMount() is a lousy way of fetching data and doesn'
 
 ## METHODOLOGY
 
-This app makes heavy use of react router to injects views on different childrens positions. This all start in the header, the form uses React router browserHistory to programmatically change the url. The app starts at an emptly state and after the search the Profile component in loaded. All subsequent conponents are children of this one so they all will be layeded right below. 
+This app makes heavy use of react router to inject views on different childrens positions. This all starts on the header, the form presented there uses React router browserHistory to programmatically change the url. The app starts at an emptly state and after the search the Profile component in loaded. All subsequent components are children of this one so they all will be layeded right below. 
 
 The use of a react lifecycle method componentDidUpdate() was needed precisely because selecting users in the followers or following listings had to change the already loaded user. Meaning the loaded user had to give way to the new user if a selection on any list was made. Another lifecycle method used was componentDidMount(), used to fetch data from the Github API once the component finished its loaded phase.
 
