@@ -8,7 +8,7 @@ import * as actions from '../../../actions';
 
 import styles from '../Stream.css';
 
-class User extends React.Component {
+class Profile extends React.Component {
   componentDidMount() {
     this.props.onProfileFetch(this.props.params.username);
   }
@@ -74,7 +74,12 @@ class User extends React.Component {
           </div>
         </div>
         <div className={styles.followersPage}>
-          {this.props.children}
+          {
+            React.Children.map(this.props.children, child => React.cloneElement(
+                child,
+                { ...this.props },
+              ))
+          }
         </div>
       </div>
     );
@@ -94,7 +99,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-User.propTypes = {
+Profile.propTypes = {
   children: React.PropTypes.node.isRequired,
   onProfileFetch: React.PropTypes.func.isRequired,
   params: React.PropTypes.shape({
@@ -103,4 +108,4 @@ User.propTypes = {
   user: React.PropTypes.string.isRequired,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(User);
+export default connect(mapStateToProps, mapDispatchToProps)(Profile);

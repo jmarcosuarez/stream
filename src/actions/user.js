@@ -9,7 +9,6 @@ function setNewUser(user) {
 }
 
 export function fetchUser(params) {
-  console.log(params);
   return (dispatch) => {
     fetch(`//api.github.com/users/${params}`)
       .then(response => response.json())
