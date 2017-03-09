@@ -58,7 +58,6 @@ class User extends React.Component {
       },
     ];
 
-    // Look in index.css for the styles that make this look like it does
     return (
       <div>
         <div className={styles.userPage}>
