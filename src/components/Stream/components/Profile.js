@@ -87,14 +87,17 @@ class Profile extends React.Component {
 
 function mapStateToProps(state) {
   const { user } = state.user;
+  const { followers } = state.followers;
   return {
     user,
+    followers,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     onProfileFetch: bindActionCreators(actions.fetchUser, dispatch),
+    onFollowerFetch: bindActionCreators(actions.fetchFollower, dispatch),
   };
 }
 

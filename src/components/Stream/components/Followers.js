@@ -9,36 +9,26 @@ class Followers extends Component {
     this.state = {};
   }
   componentDidMount() {
-    this.fetchData();
+    this.props.onFollowerFetch(this.props.params.username);
   }
 /* eslint-disable no-unused-vars */
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.params.username !== this.props.params.username) {
-      this.fetchData();
+      this.props.onFollowerFetch(this.props.params.username);
     }
   }
-  fetchData() {
-    fetch(`https://api.github.com/users/${this.props.params.username}/followers`)
-    .then(response => response.json())
-    .then(
-      (followers) => {
-        this.setState({
-          followers,
-        });
-      },
-    );
-  }
+
   render() {
-      // If the state doesn't have a Followers key, it means the AJAX didn't complete yet. Simply render a LOADING indicator.
-    if (!this.state.followers) {
+      // If no Followers, fetch didn't complete yet. Render a LOADING indicator.
+    if (!this.props.followers) {
       return (<div className="Followers-page">LOADING...</div>);
     }
-
+    const { followers } = this.props;
     return (
       <div className="followers-page">
         <h2>Followers of {this.props.params.username}</h2>
         <ul>
-          {this.state.followers.map((follower, key) => <GithubUser key={key} follower={follower} />)}
+          {followers.map((follower, key) => <GithubUser key={key} follower={follower} />)}
         </ul>
       </div>
     );
@@ -49,6 +39,8 @@ Followers.propTypes = {
   params: React.PropTypes.shape({
     username: React.PropTypes.shape,
   }).isRequired,
+  onFollowerFetch: React.PropTypes.func.isRequired,
+  followers: React.PropTypes.node.isRequired,
 };
 
 export default Followers;
