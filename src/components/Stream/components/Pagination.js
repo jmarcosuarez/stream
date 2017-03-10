@@ -1,4 +1,5 @@
 /* eslint-disable react/no-array-index-key */
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
 
 const Article = ({ article, onPaginate }) => (
