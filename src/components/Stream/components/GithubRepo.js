@@ -15,8 +15,4 @@ const GithubRepo = ({ repo }) =>
     </a>
   </div>;
 
-GithubRepo.propTypes = {
-  repo: React.PropTypes.string.isRequired,
-};
-
 export default GithubRepo;

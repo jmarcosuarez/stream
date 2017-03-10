@@ -88,9 +88,11 @@ class Profile extends React.Component {
 function mapStateToProps(state) {
   const { user } = state.user;
   const { followers } = state.followers;
+  const { links } = state.followers;
   return {
     user,
     followers,
+    links,
   };
 }
 
@@ -98,14 +100,8 @@ function mapDispatchToProps(dispatch) {
   return {
     onProfileFetch: bindActionCreators(actions.fetchUser, dispatch),
     onFollowerFetch: bindActionCreators(actions.fetchFollower, dispatch),
+    onFollowerPaginate: bindActionCreators(actions.followerPaginate, dispatch),
   };
 }
-
-Profile.propTypes = {
-  children: React.PropTypes.node.isRequired,
-  onProfileFetch: React.PropTypes.func.isRequired,
-  params: React.PropTypes.func.isRequired,
-  user: React.PropTypes.string.isRequired,
-};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Profile);

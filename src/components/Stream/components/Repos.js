@@ -45,11 +45,4 @@ class Repos extends React.Component {
   }
 }
 
-Repos.propTypes = {
-  params: React.PropTypes.shape({
-    username: React.PropTypes.shape,
-  }).isRequired,
-};
-
-
 export default Repos;

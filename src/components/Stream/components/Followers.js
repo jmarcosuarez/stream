@@ -2,6 +2,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
 import GithubUser from './GithubUser';
+import Pagination from './Pagination';
 
 class Followers extends Component {
   constructor() {
@@ -23,22 +24,19 @@ class Followers extends Component {
     if (!this.props.followers) {
       return (<div className="Followers-page">LOADING...</div>);
     }
-    const { followers } = this.props;
+    const { followers, links, onFollowerPaginate } = this.props;
     return (
       <div className="followers-page">
         <h2>Followers of {this.props.params.username}</h2>
         <ul>
           {followers.map((follower, key) => <GithubUser key={key} follower={follower} />)}
         </ul>
+        {
+          links && <Pagination links={links} onPaginate={onFollowerPaginate} />
+        }
       </div>
     );
   }
 }
-
-Followers.propTypes = {
-  params: React.PropTypes.func.isRequired,
-  onFollowerFetch: React.PropTypes.func.isRequired,
-  followers: React.PropTypes.node.isRequired,
-};
 
 export default Followers;

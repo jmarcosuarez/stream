@@ -45,8 +45,4 @@ class Following extends React.Component {
   }
 }
 
-Following.propTypes = {
-  params: React.PropTypes.string.isRequired,
-};
-
 export default Following;

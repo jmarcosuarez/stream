@@ -16,8 +16,4 @@ const GithubUser = ({ follower }) =>
     </Link>
   </div>;
 
-GithubUser.propTypes = {
-  follower: React.PropTypes.node.isRequired,
-};
-
 export default GithubUser;
