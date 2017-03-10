@@ -36,9 +36,7 @@ class Followers extends Component {
 }
 
 Followers.propTypes = {
-  params: React.PropTypes.shape({
-    username: React.PropTypes.shape,
-  }).isRequired,
+  params: React.PropTypes.func.isRequired,
   onFollowerFetch: React.PropTypes.func.isRequired,
   followers: React.PropTypes.node.isRequired,
 };

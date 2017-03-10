@@ -104,9 +104,7 @@ function mapDispatchToProps(dispatch) {
 Profile.propTypes = {
   children: React.PropTypes.node.isRequired,
   onProfileFetch: React.PropTypes.func.isRequired,
-  params: React.PropTypes.shape({
-    username: React.PropTypes.shape,
-  }).isRequired,
+  params: React.PropTypes.func.isRequired,
   user: React.PropTypes.string.isRequired,
 };
 
