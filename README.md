@@ -37,11 +37,11 @@ CSS wise I am using css modules. I prefer css modules because it doesn't pollute
 
 ## IMAGES
 
-![alt tag](http://assets.fincaspace.com/img/stream/main.jpg)
-![alt tag](http://assets.fincaspace.com/img/stream/search.jpg)
-![alt tag](http://assets.fincaspace.com/img/stream/repos.jpg)
-![alt tag](http://assets.fincaspace.com/img/stream/followers.jpg)
-![alt tag](http://assets.fincaspace.com/img/stream/following.jpg)
+![alt tag](http://assets.fincaspace.com/img/stream/main.png)
+![alt tag](http://assets.fincaspace.com/img/stream/search.png)
+![alt tag](http://assets.fincaspace.com/img/stream/repos.png)
+![alt tag](http://assets.fincaspace.com/img/stream/followers.png)
+![alt tag](http://assets.fincaspace.com/img/stream/following.png)
 
 ## WHATS MISSING
 
