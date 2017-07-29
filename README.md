@@ -35,6 +35,14 @@ Execute `npm run start` to run the development server on **[http://localhost:808
 
 CSS wise I am using css modules. I prefer css modules because it doesn't pollute the global scope and it has good performance. Also there's bootstrap but only using it in very specific occasions and not for structuring html, for that I use plain css (flexbox model).
 
+## IMAGES
+
+![alt tag](http://assets.fincaspace.com/img/stream/main.jpg)
+![alt tag](http://assets.fincaspace.com/img/stream/search.jpg)
+![alt tag](http://assets.fincaspace.com/img/stream/repos.jpg)
+![alt tag](http://assets.fincaspace.com/img/stream/followers.jpg)
+![alt tag](http://assets.fincaspace.com/img/stream/following.jpg)
+
 ## WHATS MISSING
 
 Theres plenty to call as missing but ill focus here on whats done right now, even not all the way through.
