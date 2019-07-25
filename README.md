@@ -1,5 +1,5 @@
-## ABOUT
-
+# STREAM
+## Warning! This project is very old at this point! Some of the ideas may be fine would not recommend you use it as a modern reference
 This app searches users within github using Github API. Searching starts using the search box at the header of the app. Once the form is send, the found user is displayed along with links to:
 
   - A list of its repos
@@ -8,9 +8,9 @@ This app searches users within github using Github API. Searching starts using t
 
 Following any of those links displays its contents right below the current view of the user. 
 
-## Getting started
+### Getting started
 
-### Install dependencies
+## Install dependencies
 
 Execute `npm install` to install all dependencies.
 
